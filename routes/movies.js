@@ -84,7 +84,7 @@ router.post('/search', (req, res) => {
 })
 
 router.get('/api/moviehes', (req,res) => {
-  res.render('index', {movies: movies})
+  res.json(movies)
 })
 
 module.exports = router
