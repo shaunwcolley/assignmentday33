@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title>Home</title>
+  </head>
+  <body>
+    <div>
+      {{>menu}}
+      <div>
+        <h3>Add a movie:</h3>
+        <form action="/movies" method="POST">
+          <input type="text" name="title" placeholder="Batman"/>
+          <input type="text" name="description" placeholder="Caped Crusader ..."/>
+          <input type="text" name="genre" placeholder="Superhero"/>
+          <input type="text" name="posterURL" placeholder="image.com"/>
+          <button type="submit">Add Movie</button>
+        </form>
+      </div>
+      <div>
+        <h2>Your movies</h2>
+        {{#movies}}
+          <h4>{{title}}</h4>
+          <form action="/movies/id/{{id}}" method="GET">
+            <button type="submit">Details</button>
+          </form>
+          <img src="{{posterURL}}"/>
+          <form action="/movies/delete-movie" method="POST">
+            <input type="hidden" name="id" value="{{id}}"/>
+            <button type="submit">Delete Movie</button>
+          </form>
+        {{/movies}}
+        {{^movies}}
+        <h3>Add a movie above</h3>
+        {{/movies}}
+      </div>
+    </div>
+  </body>
+</html>

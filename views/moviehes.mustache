@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title>API</title>
+  </head>
+  <body>
+    [{{#movies}}
+    {"id": "{{id}}",
+    "title": "{{title}}",
+    "description": "{{description}}",
+    "genre": "{{genre}}",
+    "posterURL": "{{posterURL}}"}
+    {{/movies}}]
+  </body>
+</html>

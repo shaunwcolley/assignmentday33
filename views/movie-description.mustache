@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <div>
+      {{>menu}}
+      <div>
+        {{#movie}}
+          <h4>{{title}}</h4>
+          <p>{{genre}}</p>
+          <p>{{description}}</p>
+          <img src="{{posterURL}}"/>
+        {{/movie}}
+      </div>
+    </div>
+
+  </body>
+</html>
