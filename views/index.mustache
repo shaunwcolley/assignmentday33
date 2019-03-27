@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta>
+    <link rel="stylesheet" href="/css/style.css">
     <title>Home</title>
   </head>
   <body>
     <div>
       {{>menu}}
+      <div>
+        <h3>Search for movie by genre:</h3>
+        <form action="/movies/search" method="POST">
+          <input type="text" name="genre" placeholder="Comedy"/>
+          <button type="submit">Search</button>
+        </form>
+      </div>
       <div>
         <h3>Add a movie:</h3>
         <form action="/movies" method="POST">
